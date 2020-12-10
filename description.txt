@@ -1,5 +1,7 @@
-Download and install the JFrog CLI...
 
+server task created : https://task.jfrog.io/
+
+JFrog CLI:
 sudo mv ./jfrog /usr/local/bin/
 echo "source /home/sarel/.jfrog/jfrog_bash_completion" >> ~/.bashrc
 
@@ -9,10 +11,32 @@ verify that Artifactory is accessible:
     jfrog rt ping --url=https://task.jfrog.io/ui/login/ --server-id=sarel --insecure-tls=true
     jfrog rt c show.
 
-create a dev repo.
-create two groups ,one for dev-team1 and another for dev-team2
-create two users for mangers and related them to the current group(manegers).
-create four users for developers and related them to the current group(developers).
-create permissions and related them for dev repo:
-    first for mangers with mange permissions,
-    and second for developers with read annotate and deploy/cache permissions.
+REST API:
+create admin uder from the ui:
+    press new user 
+    insert details... and save.
+
+create an access token key for Authentication from the rest api:
+    identity and access > Access Tokens > GENERATE ADMIN TOKEN
+
+save TOKEN as a global variable:
+    ACCESS=${Access Tokens}
+
+update admin user for remove its admin permissions.
+   curl -H "Authorization: Bearer $ACCESS" -s -i https://task.jfrog.io/artifactory/api/security/users/admin -vvv -X POST -H "Content-Type: application/json" -d '{"name":"admin","adminPrivileges" : false}'
+
+Download and install the JFrog CLI...
+
+
+Artifactory onboarding:(from the ui)
+create a local repository ,one for two teams and another for 2 devlopers from each them for them Local storage.
+    Repositories > add repository > local repository > generic ... fill details
+
+create three groups ,one for manegers ,another for all developers and another for the spacial devlopers from each team.
+    identity and access > Groups > new group ... fill details
+
+create six users , 2 for team-leader and manege the group ,and another four developers and Assign them to the correct group(manegers/developers/spacial).
+    identity and access > Users > new user ... fill details
+
+create permissions and related them the correct Repositories and defind permissions for users groups inside:
+    identity and access > permissions > new permission
