@@ -40,3 +40,7 @@ create six users , 2 for team-leader and manege the group ,and another four deve
 
 create permissions and related them the correct Repositories and defind permissions for users groups inside:
     identity and access > permissions > new permission
+
+
+BONUS question:
+./script.sh
