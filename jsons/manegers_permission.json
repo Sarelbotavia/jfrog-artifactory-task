@@ -1,0 +1,15 @@
+{
+    "name": "manegers-permissions",
+    "repo": {
+        "repositories": ["libs-release-local"],
+        "actions": {
+            "users" : {
+                "dev1-leads": ["read","write","manage"],
+                "dev2-leads": ["read","write","manage"]
+            },
+            "groups" : {
+                "manegers" : ["manage","read","annotate"]
+            }
+        }
+    }  
+}

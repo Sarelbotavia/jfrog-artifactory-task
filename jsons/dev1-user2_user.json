@@ -1,0 +1,7 @@
+{
+    "name":"dev1-user2",
+    "adminPrivileges":true,
+    "email" : "dev1-user2@jfrog.com",
+    "password": "Dev12345",
+    "groups" : [ "developers","2best-dev"]
+}

@@ -1,0 +1,9 @@
+{
+    "key": "remote-repo1",
+    "rclass" : "remote",
+    "packageType":"generic",
+    "description": "The remote repository for developers teams",
+    "storeArtifactsLocally": true,
+    "synchronizeProperties": true,
+    "blockMismatchingMimeTypes" : true
+}

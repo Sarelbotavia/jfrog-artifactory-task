@@ -1,0 +1,6 @@
+{
+    "name":"manegers",
+    "autoJoin" :false,
+    "adminPrivileges" : false,
+    "watchManager": true
+}

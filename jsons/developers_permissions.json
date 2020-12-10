@@ -1,0 +1,12 @@
+{
+    "name": "developers-permissions",
+    "repo": {
+        "repositories": ["libs-release-local","libs-dev-local"],
+        "actions": {
+            "groups" : {
+                "developers" : ["read"],
+                "2best-dev" : ["read","annotate","deploy"]
+            }
+        }
+    }  
+}

@@ -1,0 +1,18 @@
+Download and install the JFrog CLI...
+
+sudo mv ./jfrog /usr/local/bin/
+echo "source /home/sarel/.jfrog/jfrog_bash_completion" >> ~/.bashrc
+
+configure the CLI to work against your Artifactory instance:
+    jfrog rt c default --url  https://task.jfrog.io/ui/login/ --user admin --password Parrot1986!
+verify that Artifactory is accessible:
+    jfrog rt ping --url=https://task.jfrog.io/ui/login/ --server-id=sarel --insecure-tls=true
+    jfrog rt c show.
+
+create a dev repo.
+create two groups ,one for dev-team1 and another for dev-team2
+create two users for mangers and related them to the current group(manegers).
+create four users for developers and related them to the current group(developers).
+create permissions and related them for dev repo:
+    first for mangers with mange permissions,
+    and second for developers with read annotate and deploy/cache permissions.
