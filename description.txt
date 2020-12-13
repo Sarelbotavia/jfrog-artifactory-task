@@ -2,13 +2,14 @@
 server task created : https://task.jfrog.io/
 
 JFrog CLI:
+Download and install the JFrog CLI...
 sudo mv ./jfrog /usr/local/bin/
 echo "source /home/sarel/.jfrog/jfrog_bash_completion" >> ~/.bashrc
 
 configure the CLI to work against your Artifactory instance:
-    jfrog rt c default --url  https://task.jfrog.io/ui/login/ --user admin --password Parrot1986!
+    jfrog rt c default --url  https://task.jfrog.io/artifactory/ --user admin --password ****** (or with access token)
 verify that Artifactory is accessible:
-    jfrog rt ping --url=https://task.jfrog.io/ui/login/ --server-id=sarel --insecure-tls=true
+    jfrog rt ping --url=https://task.jfrog.io/artifactory/ --server-id=sarel --insecure-tls=true
     jfrog rt c show.
 
 REST API:
@@ -24,8 +25,6 @@ save TOKEN as a global variable:
 
 update admin user for remove its admin permissions.
    curl -H "Authorization: Bearer $ACCESS" -s -i https://task.jfrog.io/artifactory/api/security/users/admin -vvv -X POST -H "Content-Type: application/json" -d '{"name":"admin","adminPrivileges" : false}'
-
-Download and install the JFrog CLI...
 
 
 Artifactory onboarding:(from the ui)
